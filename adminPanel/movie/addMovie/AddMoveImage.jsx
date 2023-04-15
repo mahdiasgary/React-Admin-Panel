@@ -3,7 +3,12 @@ import { BsImageFill } from "react-icons/bs";
 import DragDropFile from "./DragDropFile";
 import { RxTrash } from "react-icons/rx";
 
-const AddMoveImage = ({movieCover, setMovieCover,movieBackground, setMovieBackground}) => {
+const AddMoveImage = ({
+  movieCover,
+  setMovieCover,
+  movieBackground,
+  setMovieBackground,
+}) => {
   return (
     <li class="mb-16 ml-6 flex flex-col">
       <div className="flex">
@@ -28,12 +33,12 @@ const AddMoveImage = ({movieCover, setMovieCover,movieBackground, setMovieBackgr
             <BsImageFill />
           </span>
         )}
-        <h3 class="font-medium leading-tight self-center mt-2">
+        <h3 class="font-medium leading-tight self-center mt-2  px-1">
           Add Movie Image
         </h3>
       </div>
       <div className="mt-10">
-        <div className="flex justify-center gap-5 ">
+        <div className="flex flex-col md:flex-row justify-center gap-8 ">
           {movieCover ? (
             <div className="min-w-[190px]  h-[270px] flex flex-col ">
               <img
@@ -49,7 +54,7 @@ const AddMoveImage = ({movieCover, setMovieCover,movieBackground, setMovieBackgr
               </button>
             </div>
           ) : (
-            <div className="flex flex-col text-center">
+            <div className=" text-center">
               <DragDropFile
                 movieCover={movieCover}
                 setMovieCover={setMovieCover}
@@ -58,6 +63,7 @@ const AddMoveImage = ({movieCover, setMovieCover,movieBackground, setMovieBackgr
               <p className="text-btn mt-3 font-semibold">Upload Movies Cover</p>
             </div>
           )}
+
           {movieBackground ? (
             <div className="min-w-[190px] h-[270px] flex flex-col ">
               <img
@@ -73,7 +79,7 @@ const AddMoveImage = ({movieCover, setMovieCover,movieBackground, setMovieBackgr
               </button>
             </div>
           ) : (
-            <div className="flex flex-col text-center">
+            <div className="flex flex-col text-center ">
               <DragDropFile
                 movieBackground={movieBackground}
                 setMovieBackground={setMovieBackground}
